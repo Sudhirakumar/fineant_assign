@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
+import { useAuthState, useSignInWithFacebook } from "react-firebase-hooks/auth";
+import FacebookLogin from "react-facebook-login"
 
 import { Link, useNavigate } from "react-router-dom";
 import {
@@ -54,6 +55,12 @@ function Register() {
           onClick={signInWithGoogle}
         >
           Register with Google
+        </button>
+        <button
+          className="register_btn register_Facebook"
+          onClick={useSignInWithFacebook}
+        >
+          Register with Facebook
         </button>
         <div>
           Already have an account? <Link to="/">Login</Link> now.
